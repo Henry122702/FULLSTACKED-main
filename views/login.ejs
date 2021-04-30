@@ -1,0 +1,38 @@
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+<body>
+<div class = "create-blog ">
+  <h1 class="login-header" >Login</h1>
+  <%- include ("./partials/messages") %>
+<!--* Gets the information from the form then POST it on /login route to undergo verification via passport-->
+  <form action="/users/login" method="POST">
+    <div class="form-group">
+      <label for="username">Username</label>
+        <input
+        type="username"
+        id="username"
+        name="username"
+        class="form-control"
+        placeholder="Enter Username"
+        />
+    </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        placeholder="Enter Password"
+      />
+  </div>
+  <button type="submit">Login</button>
+  </form>
+<!--* Sends the user to the register page if the user does not have an account-->
+ <p class ="register-prompt">
+    No Account? <a class="login-link" href="/users/register">Register</a>
+ </p>
+<%- include("./partials/footer.ejs") %>
+</div>
+</body>
+</html>

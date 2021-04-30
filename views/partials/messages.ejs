@@ -1,0 +1,17 @@
+<% if(locals.errors){ %> <% errors.forEach(function(error) { %>
+    <div class="messages">
+      <%= error.msg %>
+    </div>
+    <div class="messages">
+    <% }); %> <% } %> <% if(success_msg != ''){ %>
+      <%= success_msg %>
+    </div>
+    <% } %> <% if(error_msg != ''){ %>
+    <div class="messages">
+      <%= error_msg %>
+    </div>
+    <% } %> <% if(error != ''){ %>
+    <div class="messages">
+      <%= error %>
+    </div>
+    <% } %>

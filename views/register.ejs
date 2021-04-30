@@ -1,0 +1,57 @@
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+<body>
+  <div class="create-blog">
+  <h1 class="login-header">Register</h1>
+   <!--* Error Messages -->
+  <%- include ("./partials/messages") %>
+  <!--* Posts the data inputted in the form to the database via POST -->
+ <form action="/users/register" method="POST">
+    <div>
+      <label for="name">Name</label>
+      <input
+        type="name"
+        id="name"
+        name="name"
+        class="form-control"
+        placeholder="Enter Name"
+        value="<%= typeof name != 'undefined' ? name : '' %>"
+      />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="Create Password"
+          value="<%= typeof password != 'undefined' ? password : '' %>"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input
+          type="password"
+          id="password2"
+          name="password2"
+          class="form-control"
+          placeholder="Confirm Password"
+          value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+        />
+      </div>
+      <button type="submit">
+        Register
+      </button>
+    </form>
+    </div>
+    <div class ="register-prompt-container">
+<!--* Sends the user to the Login page if the user does have an account-->
+    <p class="register-prompt">Have An Account? <a class ="login-link" href="/users/login">Login</a></p>
+      </div>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

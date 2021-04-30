@@ -1,0 +1,31 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+<body>
+  <%- include("../partials/nav.ejs") %>
+  <div class = "index-container">
+    <section class = "all-blogs"> 
+      <div class="blogs">
+         <h2 class="blog-header">All Blogs</h2>
+            <div class="card-grid">
+              <!--* Displays the blogs saved in Database or display a message if there are no blogs in DB -->
+                <% if (blogs.length > 0) { %>
+                    <% blogs.forEach(blog => { %>
+                        <a class="single" href="/blogs/<%= blog._id %>">
+                        <h3 class="title"><%= blog.title %></h3>
+                        <p class="snippet"><%= blog.snippet %></p>
+                        </a>
+                       <% }) %>
+                <% } else { %>
+                       <p>There are no blogs to display...</p>
+                <% } %>
+            </div>
+      </div>
+    </section>
+    <!--* Displays Videos,tables,resources and footer -->
+    <%- include("../partials/videos.ejs") %>
+    <%- include("../partials/tables.ejs") %>
+    <%- include("../partials/resources.ejs") %>
+    <%- include("../partials/footer.ejs") %>
+  </div>
+</body>
+</html>
